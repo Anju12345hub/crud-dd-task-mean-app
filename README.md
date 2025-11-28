@@ -46,10 +46,10 @@ I will try to solve the error immediately.hence my result is incomplete.[applica
 
 For setting CI/CD pipeline for this MEAN-APP ,Here we are using Github Ations.  
 
-For that I creted CI/CD.yml inside .github/worflows folder.Its availble in this repo.  
+For that I created CI/CD.yml inside .github/worflows folder.Its availble in this repo.  
 
-So, when a new commit generated, it trigger the pipeline and new version of image will create and new container is created.[pipeline]
-![Uploading ci.png…]()
+So, when a new commit generated, it trigger the pipeline and new version of image will create and new container is created.[pipeline]<img width="1225" height="753" alt="ci" src="https://github.com/user-attachments/assets/b0ea26f1-36ae-44df-8c56-655e2d8ad18d" />
+
 
 
 
