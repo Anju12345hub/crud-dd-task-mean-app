@@ -26,7 +26,13 @@ Then I run the container using the command
 ```shell
 docker-compose up -d
 ```
-[Result is shown here](C:\Users\subin\Downloads\last1.png)
+[Result is shown here]
+<img width="1748" height="483" alt="last1" src="https://github.com/user-attachments/assets/d9bb1d7a-2b8d-4f30-bc78-3e229762e73b" />
+
+Now, We can access our application uisng <ec2-ip>/tutorals, <ec2-ip/add>
+For setting CI/CD pipeline for this MEAN-APP ,Here we are using Github Ations.
+For that I creted CI/CD.yml inside .github/worflows folder.Its availble inthis repo.
+So, when a new commit generated, it trigger the pipeline and new version of image will create and new container is created.
 
 
 
