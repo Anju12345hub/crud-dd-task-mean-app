@@ -26,7 +26,7 @@ Then I run the container using the command
 ```shell
 docker-compose up -d
 ```
-[Result is shown here]("C:\Users\subin\Downloads\last1.png")
+[Result is shown here](C:\Users\subin\Downloads\last1.png)
 
 
 
