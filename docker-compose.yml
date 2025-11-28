@@ -20,6 +20,8 @@ services:
       MONGO_URL: mongodb://root:rootpassword@mongodb:27017/mydatabase?authSource=admin
     depends_on:
       - mongodb
+    ports:
+      - "8080:8080" 
     networks:
       - mean-net
 
