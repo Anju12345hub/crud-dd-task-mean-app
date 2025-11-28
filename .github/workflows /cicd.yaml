@@ -8,7 +8,7 @@ on:
       - main
     paths-ignore:
       - '.gitignore'
-      - 'README.md'
+      
 
 jobs:
   build:
