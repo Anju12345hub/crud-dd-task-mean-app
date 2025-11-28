@@ -12,7 +12,7 @@ RUN npm run build --prod
 # Stage 2: Serve with Nginx
 FROM nginx:1.25
 
-COPY --from=build /app/dist/frontend /usr/share/nginx/html
+COPY --from=build /app/dist/* /usr/share/nginx/html
 
 # Copy default nginx config (optional)
 COPY nginx/reverse-proxy.conf /etc/nginx/conf.d/default.conf
