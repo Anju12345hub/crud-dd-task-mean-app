@@ -1,16 +1,15 @@
 # CICD using GitHub actions
 name: CI/CD
 
-# Exclude the workflow to run on changes to the helm chart
 on:
   push:
     branches:
       - main
     paths-ignore:
       - '.gitignore'
-      
 
 jobs:
+
   build:
     runs-on: ubuntu-latest
 
@@ -48,5 +47,3 @@ jobs:
 
       - name: Push Frontend Image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/mean-frontend:latest
-
-  
