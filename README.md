@@ -38,7 +38,7 @@ docker-compose up -d
 [Result is shown here]
 <img width="1748" height="483" alt="last1" src="https://github.com/user-attachments/assets/d9bb1d7a-2b8d-4f30-bc78-3e229762e73b" />
 
-Now, We can access our application using <ec2-ip>/tutorials, <ec2-ip>/add  
+Now, We can access our application using : ec2-ip/tutorials, ec2-ip/add  
 
 But, Due to some error my backend app refused to connect to the mongodb.  
 I will try to solve the error immediately.hence my result is incomplete.[application]<img width="1536" height="864" alt="resultimg" src="https://github.com/user-attachments/assets/4be2c3c4-a128-4be6-ae20-8371f2b7490f" />
