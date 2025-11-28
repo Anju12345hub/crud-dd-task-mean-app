@@ -15,7 +15,7 @@ FROM nginx:1.25
 COPY --from=build /app/dist/frontend /usr/share/nginx/html
 
 # Copy default nginx config (optional)
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx/reverse-proxy.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
