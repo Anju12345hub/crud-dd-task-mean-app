@@ -1,4 +1,4 @@
-##crud-dd-task-mean-app
+# crud-dd-task-mean-app
 
 ## My explanation
 
@@ -54,7 +54,7 @@ So, when a new commit generated, it trigger the pipeline and new version of imag
 
 
 
-##Company provided details
+## Company provided details
 
 
 In this DevOps task, you need to build and deploy a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular 15, and Node.js). The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database. The frontend will be an Angular application utilizing HTTPClient for communication.  
