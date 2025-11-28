@@ -30,7 +30,8 @@ docker-compose up -d
 <img width="1748" height="483" alt="last1" src="https://github.com/user-attachments/assets/d9bb1d7a-2b8d-4f30-bc78-3e229762e73b" />
 
 Now, We can access our application uisng <ec2-ip>/tutorals, <ec2-ip/add>
-But, Due to some error my backend app refused to connect to the mongodb.I will try to solve the error immediately.hence my result is incomplete.[application]![Uploading last1.png…]()
+But, Due to some error my backend app refused to connect to the mongodb.I will try to solve the error immediately.hence my result is incomplete.[application]<img width="1536" height="864" alt="resultimg" src="https://github.com/user-attachments/assets/4be2c3c4-a128-4be6-ae20-8371f2b7490f" />
+
 
 For setting CI/CD pipeline for this MEAN-APP ,Here we are using Github Ations.
 For that I creted CI/CD.yml inside .github/worflows folder.Its availble inthis repo.
