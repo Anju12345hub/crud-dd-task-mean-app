@@ -94,6 +94,6 @@ jobs:
 
           echo "Restarting containers..."
           docker compose down
-          docker compose up -d
+          docker compose -f docker-compose.cicd.yml up -d
 
           echo "Deployment finished successfully."
