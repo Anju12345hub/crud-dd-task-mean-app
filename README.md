@@ -2,11 +2,9 @@
 
 ## My explanation
 
-After getting the source code from the zip file, I created Dockerfile for Frontend, beckend application ,and docker-compose.yml ,which is available in this repository.
+After extracting the source code from the ZIP file, I created Dockerfiles for the frontend and backend applications, along with a docker-compose.yml file, all of which are available in this repository.
 
-
-Created an ubuntu ec2 instance on my AWS account.
-Go to that ec2 -->connect to the instance and install docker using following commands
+I then created an Ubuntu EC2 instance in my AWS account. After launching the instance, I connected to it and installed Docker using the following commands:
 ```shell
 sudo apt update
 sudo apt install docker.io -y
@@ -38,23 +36,26 @@ docker-compose up -d
 [Result is shown here]
 <img width="1748" height="483" alt="last1" src="https://github.com/user-attachments/assets/d9bb1d7a-2b8d-4f30-bc78-3e229762e73b" />
 
-Now, We can access our application using : ec2-ip/tutorials, ec2-ip/add  
+Now, we can access our application using: EC2-IP/tutorials and EC2-IP/add.
 
-But, Due to some error my backend app refused to connect to the mongodb.  
-I will try to solve the error immediately.hence my result is incomplete.Now This issue is resolved by modifying the `db.config.js` file located in `app/config/`.My backend app is connecting with my mongodb database.
+Initially, due to an error, my backend application was unable to connect to MongoDB. 
 
-Now my issue is with Nginx reverse-proxy.[application]<img width="1536" height="864" alt="resultimg" src="https://github.com/user-attachments/assets/4be2c3c4-a128-4be6-ae20-8371f2b7490f" />
-I modified my nginx reverse-proxy file.
+I will resolve this issue as soon as possible, and therefore my result was incomplete. 
+
+This problem is now fixed by updating the db.config.js file located in app/config/. 
+
+After making the required changes, the backend application successfully connects to the MongoDB database..[application]<img width="1536" height="864" alt="resultimg" src="https://github.com/user-attachments/assets/4be2c3c4-a128-4be6-ae20-8371f2b7490f" />
+Now, the current issue is related to the Nginx reverse proxy.
 <img width="1145" height="449" alt="nginx-reverseproxy" src="https://github.com/user-attachments/assets/556428f5-12e0-44fe-ab10-3bac5816d592" />
-Finally I found out the error in my Docker-compose.yml.Reason: Here I created 4 containers -mongodb, backend, fronteend, nginx reverse-proxy.This Nginx container does not contain my frontend build.
+Finally, I identified the issue in my docker-compose.yml.
+The reason was that I had created four containers—MongoDB, Backend, Frontend, and Nginx Reverse Proxy—but the Nginx container did not include my frontend build.
 
-This means my Angular build (dist/…) never gets copied into Nginx.  
+This meant that my Angular build (dist/...) was never copied into the Nginx container.
+As a result, Nginx displayed the default “Welcome to nginx!” page.
 
-So Nginx shows the default Welcome page.
+I have now updated the docker-compose.yml file in my repository, and the issue is resolved.
 
-I modified docker-compose.yml as shown in my repo now.
-
-result output images are 
+The final output screenshots are attached here:
 <img width="1169" height="467" alt="output1" src="https://github.com/user-attachments/assets/f3744992-ae18-45f5-952f-5d67d9826e6e" />
 
 <img width="1145" height="410" alt="output2" src="https://github.com/user-attachments/assets/232b2546-60f8-436d-8823-4c8e486dd871" />
