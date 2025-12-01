@@ -41,7 +41,7 @@ docker-compose up -d
 Now, We can access our application using : ec2-ip/tutorials, ec2-ip/add  
 
 But, Due to some error my backend app refused to connect to the mongodb.  
-I will try to solve the error immediately.hence my result is incomplete.Now issue is resoled by modifying the `db.config.js` file located in `app/config/`.My backend app is connecting with my mongodb database.
+I will try to solve the error immediately.hence my result is incomplete.Now This issue is resolved by modifying the `db.config.js` file located in `app/config/`.My backend app is connecting with my mongodb database.
 
 Now my issue is with Nginx reverse-proxy.[application]<img width="1536" height="864" alt="resultimg" src="https://github.com/user-attachments/assets/4be2c3c4-a128-4be6-ae20-8371f2b7490f" />
 
