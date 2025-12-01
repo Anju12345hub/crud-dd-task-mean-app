@@ -1,0 +1,45 @@
+version: '3.9'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - mean-net
+
+  backend:
+    image: ${DOCKERHUB_USERNAME}/mean-backend:latest  # pulled by GitHub Actions
+    container_name: backend
+    restart: always
+    environment:
+      NODE_ENV: production
+      MONGO_URI: mongodb://mongodb:27017/mydatabase
+    depends_on:
+      - mongodb
+    ports:
+      - "8080:8080" 
+    networks:
+      - mean-net
+
+  nginx:
+    image: ${DOCKERHUB_USERNAME}/mean-frontend:latest  # pulled by GitHub Actions
+    container_name: reverse-proxy
+    restart: always
+    volumes:
+      - ./nginx/reverse-proxy.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - mean-net
+
+networks:
+  mean-net:
+
+volumes:
+  mongo-data:
