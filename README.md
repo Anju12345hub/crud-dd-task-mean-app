@@ -45,6 +45,7 @@ I will try to solve the error immediately.hence my result is incomplete.Now This
 
 Now my issue is with Nginx reverse-proxy.[application]<img width="1536" height="864" alt="resultimg" src="https://github.com/user-attachments/assets/4be2c3c4-a128-4be6-ae20-8371f2b7490f" />
 I modified my nginx reverse-proxy file.
+<img width="1145" height="449" alt="nginx-reverseproxy" src="https://github.com/user-attachments/assets/556428f5-12e0-44fe-ab10-3bac5816d592" />
 
 
 ## For setting CI/CD pipeline for this MEAN-APP ,Here we are using Github Ations.  
