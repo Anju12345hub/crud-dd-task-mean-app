@@ -46,7 +46,18 @@ I will try to solve the error immediately.hence my result is incomplete.Now This
 Now my issue is with Nginx reverse-proxy.[application]<img width="1536" height="864" alt="resultimg" src="https://github.com/user-attachments/assets/4be2c3c4-a128-4be6-ae20-8371f2b7490f" />
 I modified my nginx reverse-proxy file.
 <img width="1145" height="449" alt="nginx-reverseproxy" src="https://github.com/user-attachments/assets/556428f5-12e0-44fe-ab10-3bac5816d592" />
+Finally I found out the error in my Docker-compose.yml.Reason: Here I created 4 containers -mongodb, backend, fronteend, nginx reverse-proxy.This Nginx container does not contain my frontend build.
 
+This means my Angular build (dist/…) never gets copied into Nginx.  
+
+So Nginx shows the default Welcome page.
+
+I modified docker-compose.yml as shown in my repo now.
+
+result output images are 
+<img width="1169" height="467" alt="output1" src="https://github.com/user-attachments/assets/f3744992-ae18-45f5-952f-5d67d9826e6e" />
+
+<img width="1145" height="410" alt="output2" src="https://github.com/user-attachments/assets/232b2546-60f8-436d-8823-4c8e486dd871" />
 
 ## For setting CI/CD pipeline for this MEAN-APP ,Here we are using Github Ations.  
 
