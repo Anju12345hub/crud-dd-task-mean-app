@@ -69,3 +69,31 @@ jobs:
         file: ./frontend/Dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/mean-frontend:${{ github.run_id }}
+
+  deploy:
+    name: Deploy to AWS EC2
+    needs: push
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Deploy to EC2 via SSH
+      uses: appleboy/ssh-action@v1
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          cd /home/${{ secrets.EC2_USER }}/crud-dd-task-mean-app
+
+          echo "Pulling latest images..."
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/mean-backend:latest
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/mean-frontend:latest
+
+          echo "Restarting containers..."
+          docker compose down
+          docker compose up -d
+
+          echo "Deployment finished successfully."
