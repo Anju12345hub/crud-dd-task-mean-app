@@ -64,11 +64,65 @@ docker containers :
 
 <img width="1814" height="350" alt="final result" src="https://github.com/user-attachments/assets/63058b03-1b1a-41aa-a0b5-49b3ed954d1b" />
 
-## For setting CI/CD pipeline for this MEAN-APP ,Here we are using Github Ations.  
+## For setting up the CI/CD pipeline for this MEAN application, we are using GitHub Actions.
 
-For that I created CI/CD.yml inside .github/worflows folder.Its availble in this repo.  
+I created a cicd.yml file inside the .github/workflows folder, and it is available in this repository.
 
-So, when a new commit generated, it trigger the pipeline and new version of image will create and new container is created.[pipeline]<img width="1225" height="753" alt="ci" src="https://github.com/user-attachments/assets/b0ea26f1-36ae-44df-8c56-655e2d8ad18d" />
+With this setup, whenever a new commit is pushed, it automatically triggers the pipeline. A new version of the Docker image is built, and the container is restarted with the updated image.
+[pipeline]<img width="1225" height="753" alt="ci" src="https://github.com/user-attachments/assets/b0ea26f1-36ae-44df-8c56-655e2d8ad18d" />
+
+
+This image is the 1st attempt of my CI/CD pipeline.
+## stages of pipeline:
+build_and_psuh stage: It includes,
+✅Login to My Dockerhub account
+✅ Build Docker images
+✅ Push images to Docker Hub
+
+deploy stage:
+✅ SSH into your aws ec2 instance
+✅ Pull latest images
+✅ Restart your containers (Docker Compose)
+
+For running this pipeline, we have to create GitHub secrets:
+Go to:
+GitHub → Repo → Settings → Secrets → Actions
+
+I have created :
+✅DOCKERHUB_USERNAME -your Docker Hub username
+✅DOCKERHUB_TOKEN	 - Docker Hub Access Token (Go to your DockerHub account -> Account Setttings -> personal access tokens -> generate new token)
+✅EC2_HOST - Public ip of your ec2
+✅EC2_USER - (root or ubuntu)
+✅EC2_SSH_KEY -	 Your private SSH key content 
+
+### Generating SSH Keys
+
+Run the following command on your local machine:
+```shell
+ssh-keygen -t rsa -b 4096 -C "github-actions"
+```
+Copy the public key to your ec2 using 
+```shell
+vim ~/.ssh/authorized_keys
+```
+
+### Docker Compose for CI/CD
+
+For running this GitHub Actions CI/CD workflow, I used the docker-compose.cicd.yml file.
+
+Once a new commit is pushed:
+
+A new image is built
+
+A new container is created
+
+When another commit is pushed, the container restarts automatically with the new updated image
+
+You can see this behavior in the image below. <img width="1800" height="594" alt="restart-container" src="https://github.com/user-attachments/assets/e54c2714-024b-4c53-b3a2-ef365704cb0e" />
+
+
+
+<img width="1264" height="612" alt="pipeline1" src="https://github.com/user-attachments/assets/e9581683-0c57-4526-b06d-9482c7747361" />
 
 
 
