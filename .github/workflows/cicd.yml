@@ -45,7 +45,7 @@ jobs:
 
   deploy:
     name: Deploy to AWS EC2
-    needs: push
+    needs: build_and_push
     runs-on: ubuntu-latest
 
     steps:
