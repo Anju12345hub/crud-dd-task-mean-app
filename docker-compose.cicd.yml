@@ -12,7 +12,7 @@ services:
       - mean-net
 
   backend:
-    image: ${DOCKERHUB_USERNAME}/mean-backend:latest  # pulled by GitHub Actions
+    image: anjumohan/mean-backend:latest  # pulled by GitHub Actions from your DockerHub
     container_name: backend
     restart: always
     environment:
@@ -26,7 +26,7 @@ services:
       - mean-net
 
   nginx:
-    image: ${DOCKERHUB_USERNAME}/mean-frontend:latest  # pulled by GitHub Actions
+    image: anjumohan/mean-frontend:latest  # pulled by GitHub Actions from your DockerHub
     container_name: reverse-proxy
     restart: always
     volumes:
