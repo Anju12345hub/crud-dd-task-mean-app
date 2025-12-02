@@ -74,25 +74,42 @@ With this setup, whenever a new commit is pushed, it automatically triggers the 
 
 This image is the 1st attempt of my CI/CD pipeline.
 ## stages of pipeline:
-build_and_psuh stage: It includes,
-✅Login to My Dockerhub account
-✅ Build Docker images
-✅ Push images to Docker Hub
 
-deploy stage:
-✅ SSH into your aws ec2 instance
-✅ Pull latest images
+
+build_and_psuh stage: It includes,  
+
+✅Login to My Dockerhub account  
+
+✅ Build Docker images  
+
+✅ Push images to Docker Hub  
+
+
+deploy stage:  
+
+✅ SSH into your aws ec2 instance  
+
+✅ Pull latest images  
+
 ✅ Restart your containers (Docker Compose)
 
-For running this pipeline, we have to create GitHub secrets:
-Go to:
-GitHub → Repo → Settings → Secrets → Actions
 
-I have created :
-✅DOCKERHUB_USERNAME -your Docker Hub username
-✅DOCKERHUB_TOKEN	 - Docker Hub Access Token (Go to your DockerHub account -> Account Setttings -> personal access tokens -> generate new token)
-✅EC2_HOST - Public ip of your ec2
-✅EC2_USER - (root or ubuntu)
+For running this pipeline, we have to create GitHub secrets:  
+
+Go to:
+GitHub → Repo → Settings → Secrets → Actions  
+
+
+I have created :  
+
+✅DOCKERHUB_USERNAME -your Docker Hub username  
+
+✅DOCKERHUB_TOKEN	 - Docker Hub Access Token (Go to your DockerHub account -> Account Setttings -> personal access tokens -> generate new token)  
+
+✅EC2_HOST - Public ip of your ec2  
+
+✅EC2_USER - (root or ubuntu)  
+
 ✅EC2_SSH_KEY -	 Your private SSH key content 
 
 ### Generating SSH Keys
