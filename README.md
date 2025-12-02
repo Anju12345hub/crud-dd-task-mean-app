@@ -94,7 +94,7 @@ deploy stage:
 ✅ Restart your containers (Docker Compose)
 
 
-For running this pipeline, we have to create GitHub secrets:  
+For running this pipeline, we have to create ### GitHub secrets:  
 
 Go to:
 GitHub → Repo → Settings → Secrets → Actions  
